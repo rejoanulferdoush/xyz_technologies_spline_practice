@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Facility — Admin Portal (Wireframe)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+  <div class="min-h-screen flex">
+    <!-- Sidebar -->
+    <aside class="w-72 bg-white border-r p-4">
+      <div class="mb-6">
+        <div class="w-12 h-12 bg-indigo-600 rounded flex items-center justify-center text-white font-bold">AD</div>
+        <h2 class="font-semibold mt-2">Admin Portal</h2>
+      </div>
+      <nav class="space-y-2 text-sm">
+        <a class="block p-2 rounded bg-slate-100">Dashboard</a>
+        <a class="block p-2 rounded">Users</a>
+        <a class="block p-2 rounded">Buildings</a>
+        <a class="block p-2 rounded">EMS / AQI</a>
+        <a class="block p-2 rounded">Pricing</a>
+        <a class="block p-2 rounded">Notifications</a>
+        <a class="block p-2 rounded">Reports</a>
+        <a class="block p-2 rounded">Settings</a>
+      </nav>
+    </aside>
+
+    <!-- Main -->
+    <main class="flex-1 p-6">
+      <header class="flex justify-between items-center mb-6">
+        <div>
+          <h1 class="text-2xl font-semibold">Admin Dashboard</h1>
+          <p class="text-sm text-slate-500">Overview · Manage facility systems</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <input class="border p-2 rounded" placeholder="Search users, building..." />
+          <button class="px-3 py-1 bg-indigo-600 text-white rounded">New</button>
+        </div>
+      </header>
+
+      <!-- Top metrics -->
+      <section class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+        <div class="bg-white p-4 rounded shadow"><div class="text-sm text-slate-500">Total Users</div><div class="text-xl font-bold">1,240</div></div>
+        <div class="bg-white p-4 rounded shadow"><div class="text-sm text-slate-500">Buildings</div><div class="text-xl font-bold">11</div></div>
+        <div class="bg-white p-4 rounded shadow"><div class="text-sm text-slate-500">Active EMS</div><div class="text-xl font-bold">3</div></div>
+        <div class="bg-white p-4 rounded shadow"><div class="text-sm text-slate-500">Open Tickets</div><div class="text-xl font-bold">28</div></div>
+      </section>
+
+      <!-- Users & building config -->
+      <section class="grid md:grid-cols-2 gap-4 mb-6">
+        <div class="bg-white p-4 rounded shadow">
+          <h3 class="font-semibold">User Management</h3>
+          <div class="mt-3">
+            <table class="w-full text-sm">
+              <thead><tr><th class="text-left">Name</th><th>Email</th><th>Role</th><th></th></tr></thead>
+              <tbody>
+                <tr><td>Owner 210</td><td>owner210@mail.com</td><td>Flat Owner</td><td class="text-right"><button class="px-2 py-1 border rounded">Edit</button></td></tr>
+                <tr><td>Manager A</td><td>mgr@mail.com</td><td>Facility Manager</td><td class="text-right"><button class="px-2 py-1 border rounded">Edit</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="bg-white p-4 rounded shadow">
+          <h3 class="font-semibold">Building / EMS Config</h3>
+          <p class="text-sm text-slate-500">Add buildings, set EMS pricing, manage AQI billboard</p>
+          <div class="mt-3 grid gap-2">
+            <input class="p-2 border rounded" placeholder="Building name" />
+            <input class="p-2 border rounded" placeholder="Number of units" />
+            <div class="flex gap-2 justify-end">
+              <button class="px-3 py-1 border rounded">Cancel</button>
+              <button class="px-3 py-1 bg-indigo-600 text-white rounded">Save</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EMS pricing & AQI billboard -->
+      <section class="grid md:grid-cols-3 gap-4 mb-6">
+        <div class="bg-white p-4 rounded shadow col-span-2">
+          <h3 class="font-semibold">EMS Pricing (per building)</h3>
+          <div class="mt-3 grid gap-2">
+            <label class="flex justify-between text-sm"><span>Majestic (11 building) — MRC</span><strong>৳ 35,000</strong></label>
+            <label class="flex justify-between text-sm"><span>Custom (single building)</span><strong>৳ 25,000</strong></label>
+            <div class="mt-3 flex justify-end gap-2">
+              <button class="px-3 py-1 border rounded">Edit Prices</button>
+              <button class="px-3 py-1 bg-emerald-600 text-white rounded">Apply</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-4 rounded shadow">
+          <h3 class="font-semibold">AQI Billboard</h3>
+          <p class="text-sm text-slate-500">Ad options & live feed</p>
+          <div class="mt-3">
+            <label class="text-sm">Ad-On Pricing</label>
+            <input class="mt-2 p-2 border rounded w-full" placeholder="Set price (৳)" />
+            <div class="mt-3 flex justify-end">
+              <button class="px-3 py-1 bg-indigo-600 text-white rounded">Save</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Reports & Notifications -->
+      <section class="grid md:grid-cols-2 gap-4">
+        <div class="bg-white p-4 rounded shadow">
+          <h3 class="font-semibold">Reports</h3>
+          <div class="mt-3 text-sm text-slate-500">Generate CSV / PDF — Complaints, Payments, Staff logs, EMS reports</div>
+          <div class="mt-4 flex gap-2">
+            <button class="px-3 py-1 border rounded">Complaints</button>
+            <button class="px-3 py-1 border rounded">Payments</button>
+            <button class="px-3 py-1 border rounded">Staff logs</button>
+            <button class="px-3 py-1 bg-indigo-600 text-white rounded">Generate</button>
+          </div>
+        </div>
+
+        <div class="bg-white p-4 rounded shadow">
+          <h3 class="font-semibold">Notifications</h3>
+          <div class="mt-3 text-sm text-slate-500">Push / SMS / Email config for users</div>
+          <div class="mt-3">
+            <label class="flex items-center gap-2"><input type="checkbox" /> Enable payment reminders</label>
+            <label class="flex items-center gap-2"><input type="checkbox" /> Emergency alerts</label>
+            <div class="mt-3 flex justify-end"><button class="px-3 py-1 bg-indigo-600 text-white rounded">Save</button></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

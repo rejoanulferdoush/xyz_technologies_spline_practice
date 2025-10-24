@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Facility — Flat Owner (Wireframe)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-800">
+  <header class="bg-white shadow p-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 bg-indigo-600 rounded flex items-center justify-center text-white font-bold">FC</div>
+      <div>
+        <h1 class="text-lg font-semibold">Facility App — Flat Owner</h1>
+        <p class="text-sm text-slate-500">Home · Dashboard</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <button class="px-3 py-1 bg-indigo-600 text-white rounded">Notifications <span class="ml-2 inline-block bg-red-500 px-2 rounded-full text-xs">3</span></button>
+      <div class="w-8 h-8 bg-slate-200 rounded-full"></div>
+    </div>
+  </header>
+
+  <main class="p-6 max-w-5xl mx-auto grid gap-6">
+    <!-- Quick actions -->
+    <section class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <a class="bg-white p-4 rounded shadow flex flex-col items-start gap-2">
+        <span class="text-sm text-slate-500">Complaint</span>
+        <h3 class="font-semibold">Lodge a Complaint</h3>
+        <p class="text-xs text-slate-400">Water, Electricity, Lift...</p>
+      </a>
+      <a class="bg-white p-4 rounded shadow flex flex-col items-start gap-2">
+        <span class="text-sm text-slate-500">Invoice</span>
+        <h3 class="font-semibold">View / Pay Bill</h3>
+        <p class="text-xs text-slate-400">Choose month & pay online</p>
+      </a>
+      <a class="bg-white p-4 rounded shadow flex flex-col items-start gap-2">
+        <span class="text-sm text-slate-500">Club Car</span>
+        <h3 class="font-semibold">Request Club Car</h3>
+        <p class="text-xs text-slate-400">Search destination</p>
+      </a>
+      <a class="bg-white p-4 rounded shadow flex flex-col items-start gap-2">
+        <span class="text-sm text-slate-500">Police</span>
+        <h3 class="font-semibold">Police Verification</h3>
+        <p class="text-xs text-slate-400">Fill & submit form</p>
+      </a>
+    </section>
+
+    <!-- Complaint form (expanded) -->
+    <section class="bg-white p-6 rounded shadow">
+      <h2 class="text-lg font-semibold mb-4">Lodge Complaint</h2>
+      <form class="grid gap-3 md:grid-cols-2">
+        <label class="col-span-1">
+          <span class="text-sm">Category</span>
+          <select class="w-full mt-1 p-2 border rounded">
+            <option>Water</option>
+            <option>Electricity</option>
+            <option>Lift</option>
+            <option>Generator</option>
+            <option>Security</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label class="col-span-1">
+          <span class="text-sm">Priority</span>
+          <select class="w-full mt-1 p-2 border rounded">
+            <option>Low</option><option>Medium</option><option>High</option>
+          </select>
+        </label>
+        <label class="md:col-span-2">
+          <span class="text-sm">Description</span>
+          <textarea class="w-full mt-1 p-2 border rounded" rows="4" placeholder="Describe the issue..."></textarea>
+        </label>
+        <label>
+          <span class="text-sm">Attach Photo (optional)</span>
+          <input type="file" class="w-full mt-1" />
+        </label>
+        <div class="md:col-span-2 flex justify-end gap-2">
+          <button type="reset" class="px-4 py-2 border rounded">Reset</button>
+          <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded">Submit</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Invoice card -->
+    <section class="bg-white p-6 rounded shadow grid md:grid-cols-2 gap-4">
+      <div>
+        <h3 class="font-semibold">Monthly Invoice</h3>
+        <p class="text-sm text-slate-500">Select billing month</p>
+        <select class="mt-3 p-2 border rounded w-40">
+          <option>October 2025</option>
+          <option>September 2025</option>
+          <option>August 2025</option>
+        </select>
+        <div class="mt-4 border rounded p-4">
+          <div class="flex justify-between"><span>Due Amount</span><strong>৳ 4,200</strong></div>
+          <div class="mt-3 flex gap-2">
+            <button class="px-3 py-2 border rounded">Download</button>
+            <button class="px-3 py-2 bg-green-600 text-white rounded">Pay Online</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Club car + police -->
+      <div class="space-y-4">
+        <div class="p-4 border rounded">
+          <h4 class="font-semibold">Club Car Request</h4>
+          <p class="text-sm text-slate-500">Search and request pickup</p>
+          <div class="mt-3 grid gap-2">
+            <input type="text" placeholder="Enter destination or select" class="p-2 border rounded" />
+            <div class="flex justify-end gap-2">
+              <button class="px-3 py-2 border rounded">Cancel</button>
+              <button class="px-3 py-2 bg-indigo-600 text-white rounded">Request</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 border rounded">
+          <h4 class="font-semibold">Police Verification</h4>
+          <p class="text-sm text-slate-500">Complete form online</p>
+          <div class="mt-3 flex justify-end">
+            <button class="px-3 py-2 bg-indigo-600 text-white rounded">Open Form</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hotline & AQI -->
+    <section class="grid md:grid-cols-2 gap-4">
+      <div class="bg-white p-4 rounded shadow">
+        <h3 class="font-semibold">Emergency Hotline</h3>
+        <div class="mt-3 grid gap-2">
+          <button class="w-full p-3 border rounded text-left">🔥 Fire Alarm — Instant Connect</button>
+          <button class="w-full p-3 border rounded text-left">🚑 Doctor Consultancy — Audio/Video</button>
+          <button class="w-full p-3 border rounded text-left">🔔 Thief Alarm</button>
+        </div>
+      </div>
+
+      <div class="bg-white p-4 rounded shadow">
+        <h3 class="font-semibold">Live AQI</h3>
+        <p class="text-sm text-slate-500">Real-time Air Quality Index & Billboard</p>
+        <div class="mt-4 p-3 border rounded">
+          <div class="flex justify-between">
+            <div>
+              <p class="text-2xl font-bold">AQI 82</p>
+              <p class="text-sm text-slate-500">Moderate</p>
+            </div>
+            <div class="text-sm text-slate-400">Rupayan City · Uttara</div>
+          </div>
+          <div class="mt-4 text-xs text-slate-500">[AQI Billboard ad options & pricing — admin controlled]</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
